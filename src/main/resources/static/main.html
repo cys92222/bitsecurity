@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	
+	$("#btnAdd").click(function(){
+		var data = $("#f").serialize();
+		$.ajax("insertMember",{data:data,success:function(r){
+			alert(r);
+		}})
+	})
+	
+})
+</script>
+</head>
+<body>
+<h2>회원가입</h2>
+<hr>
+<form id="f">
+아이디 <input type="text" id="id" name="id"><br>
+이름 <input type="text" id="name" name="name"><br>
+비밀번호 <input type="text" id="pwd" name="pwd"><br>
+계정등급<input type="text" id="role" name="role"><br>
+<button type="button" id="btnAdd">가입하기</button>
+</form>
+</body>
+</html>
